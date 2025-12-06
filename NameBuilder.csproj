@@ -6,7 +6,6 @@
     <AssemblyName>NameBuilder</AssemblyName>
     <RootNamespace>NameBuilder</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Deterministic>false</Deterministic>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\NameBuilder.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
