@@ -9,8 +9,6 @@ The project can be found here: https://github.com/mscottsewell/Dataverse-NameBui
 - ✅ **Multiple Field Types**: String, Lookup, Date/DateTime, OptionSet (Picklist), Number, Currency
 - ✅ **Numeric Formatting**: Thousands separators, decimal places, and K/M/B scaling (e.g., `1.5K`, `2.3M`, `450B`)
 - ✅ **Currency Formatting**: Automatic currency symbol lookup from transaction currency with K/M/B support
-- ✅ **Pattern-Based Configuration**: Simple syntax like `"createdon | ownerid - statuscode"`
-- ✅ **Fields Array Configuration**: Advanced per-field control with truncation, defaults, and fallbacks
 - ✅ **Metadata-Driven Intelligence**: Uses Dataverse metadata for accurate field type detection and validation
 - ✅ **Auto-Type Detection**: Infers field types from metadata first, then naming conventions as fallback
 - ✅ **Auto-Length Detection**: Automatically sets max length from target field metadata
@@ -88,19 +86,18 @@ Best for per-field control with truncation, defaults, and fallbacks:
       "alternateField": {
         "field": "accountid",
         "type": "lookup"
-      }
+      },
+      "suffix": " | "
     },
     {
       "field": "createdon",
       "type": "date",
       "format": "yyyy-MM-dd",
-      "prefix": " | "
+      "suffix": " | "
     },
     {
       "field": "casetypecode",
-      "type": "optionset",
-      "prefix": " | ",
-      "suffix": ""
+      "type": "optionset"
     }
   ],
   "maxLength": 200
@@ -112,17 +109,17 @@ Best for per-field control with truncation, defaults, and fallbacks:
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `field` | string | ✅ | Field logical name |
-| `type` | string | ❌ | Field type (auto-detected if omitted) |
-| `format` | string | ❌ | Date format (e.g., `yyyy-MM-dd`), numeric format (e.g., `#,##0.00`, `0.0K`, `0.00M`), or currency format |
-| `maxLength` | number | ❌ | Maximum characters for this field |
-| `truncationIndicator` | string | ❌ | String to append when truncated (default: `...`) |
-| `default` | string | ❌ | Value when field is missing/empty |
-| `alternateField` | object | ❌ | Fallback field configuration |
-| `prefix` | string | ❌ | Text before field value |
-| `suffix` | string | ❌ | Text after field value |
-| `includeIf` | object | ❌ | Condition for including this field (see Conditional Fields) |
-| `timezoneOffset` | number | ❌ | Hours to offset date/datetime values |
-| `timezoneOffsetHours` | number | ❌ | Adjusts UTC date/time by this many hours (e.g., `-5` for EST, `1` for CET) |
+| `type` | string | - | Field type (auto-detected if omitted) |
+| `format` | string | - | Date format (e.g., `yyyy-MM-dd`), numeric format (e.g., `#,##0.00`, `0.0K`, `0.00M`), or currency format |
+| `maxLength` | number | - | Maximum characters for this field |
+| `truncationIndicator` | string | - | String to append when truncated (default: `...`) |
+| `default` | string | - | Value when field is missing/empty |
+| `alternateField` | object | - | Fallback field configuration |
+| `prefix` | string | - | Text before field value |
+| `suffix` | string | - | Text after field value |
+| `includeIf` | object | - | Condition for including this field (see Conditional Fields) |
+| `timezoneOffset` | number | - | Hours to offset date/datetime values |
+| `timezoneOffsetHours` | number | - | Adjusts UTC date/time by this many hours (e.g., `-5` for EST, `1` for CET) |
 
 **See [EXAMPLES.md](EXAMPLES.md) for comprehensive fields array examples.**
 
