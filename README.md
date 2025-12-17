@@ -1,7 +1,8 @@
 # Dataverse Name Builder Plugin
 
 A configurable Dataverse plugin that dynamically constructs the primary name field of a dataverse record based on values from other fields on that record. It uses an intuitive pattern-based configuration syntax in JSON format.
-Although not a requirement, a recommended companion is the NameBuilder Configurator, an XrmToolbox utility that simplifies the creation and configuration of the JSON used by this PlugIn. 
+Although not a requirement, a recommended companion is the NameBuilder Configurator, an XrmToolbox utility that simplifies the creation and configuration of the JSON used by this PlugIn.
+The project can be found here: https://github.com/mscottsewell/Dataverse-NameBuilder-XrmToolBox-Configurator But it's easily installed from within the XrmToolBox Tools catalog, just search for NameBuilder.
 
 ## Features
 
